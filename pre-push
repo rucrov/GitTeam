@@ -1,0 +1,10 @@
+while read local_ref local_sha remote_ref remote_sha 
+do 
+	remote_branch_name=$(echo $local_ref | sed 's|refs/heads/||')
+	if [ "$remote_branch_name" = "main" ] || [ "$remote_branch_name" = "master" ]; then
+		echo "Push to master denied!" >&2
+		exit 1
+	fi
+done 
+
+exit 0
