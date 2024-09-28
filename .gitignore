@@ -1,0 +1,9 @@
+/vendor
+composer.lock
+.env
+.env.backup
+.env.production
+/.fleet
+/.idea
+/.vscode
+*.txt
