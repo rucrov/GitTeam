@@ -1,10 +1,21 @@
+#!/bin/sh
+user_name=$(git config --get user.name)
+user_email=$(git config --get user.email)
+remote=$1
+url=$(echo $2 | sed 's|//[^@]*@|//|')
 while read local_ref local_sha remote_ref remote_sha 
 do 
-	remote_branch_name=$(echo $local_ref | sed 's|refs/heads/||')
-	if [ "$remote_branch_name" = "main" ] || [ "$remote_branch_name" = "master" ]; then
-		echo "Push to master denied!" >&2
-		exit 1
-	fi
+    local_branch_name=$(echo $local_ref | sed 's|refs/heads/||') 
+    remote_branch_name=$(echo $remote_ref | sed 's|refs/heads/||')
 done 
+
+api_request=`.git/hooks/api.js $user_name $user_email $url $remote_branch_name`
+
+echo $api_request
+
+if ($api_requets); then
+    echo "Push is denied due to GitTeam">&2
+    exit 1
+fi
 
 exit 0
