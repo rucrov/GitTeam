@@ -1,5 +1,7 @@
 /vendor
 composer.lock
+/node_modules
+package-lock
 .env
 .env.backup
 .env.production
@@ -7,3 +9,4 @@ composer.lock
 /.idea
 /.vscode
 *.txt
+/webInterface/dest
