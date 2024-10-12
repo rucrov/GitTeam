@@ -2,10 +2,10 @@
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
 
-    include_once '../../config/Database.php';
-    include_once '../../models/RestrictedBranches.php';
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include_once '../../config/Database.php';
+        include_once '../../models/RestrictedBranches.php';
+
         $raw = file_get_contents('php://input');
         $data = json_decode($raw, true);
 

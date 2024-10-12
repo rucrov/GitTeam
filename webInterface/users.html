@@ -1,3 +1,24 @@
-<div>
-    user page
+<div class="text-white">
+    <button id="openUserModal" class="border border-accent rounded-md p-1 hover:bg-accent" type="button">
+        Добавить пользователя
+    </button>
+    <div id="userTable"></div>
+</div>
+<div id="userModal" class="top-0 left-0 hidden flex items-center justify-center fixed w-screen h-screen">
+    <div class="closeUserModal bg-shadow bg-opacity-50 absolute inset-0 flex justify-center items-center"></div>
+    <div class="text-white bg-primary z-10 p-3 border border-secondary rounded-md">
+        <div class="flex justify-between">
+            <h1 class="mb-1">Новый пользователь</h1>
+            <button class="closeUserModal">x</button>
+        </div>
+        <div class="flex flex-col gap-2 text-black">
+            <input id="firstInput" class="rounded-sm" placeholder="Имя (опционально)">
+            <input class="rounded-sm" placeholder="Ник">
+            <input class="rounded-sm" placeholder="Почта">
+        </div>
+        <div class="flex gap-1 mt-2">
+            <button class="w-1/2 border border-red-400 rounded-md p-1 focus:bg-red-400 hover:bg-red-400">Сбросить</button>
+            <button class="w-1/2 border border-accent rounded-md p-1 focus:bg-accent hover:bg-accent">Создать</button>
+        </div>
+    </div>
 </div>

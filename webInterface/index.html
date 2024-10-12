@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="dest/output.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
-<body class="flex">
-    <div id="menu">
-        <h1>GitTeam</h1>
+<body class="flex h-screen focus:outline-white">
+    <div id="menu" class="text-white bg-secondary border-accent border-r">
+    <h1>GitTeam</h1>
         <ul class="flex flex-col">
-            <li href="users.html">Users</li>
-            <li href="projects.html">Projects</li>
-            <li href="restrictedBranches.html">Restructed branches</li>
+            <li href="users.html"><button type="button">Пользователи</button></li>
+            <li href="projects.html"><button type="button">Проекты</button></li>
+            <li href="restrictedBranches.html"><button>Запрещенные ветки</button></li>
         </ul>
     </div>
-    <div id="mainArea">
-    </div>
-</body>
+    <div class="w-full bg-primary p-2" id="mainArea"></div>
+</body> 
 <script type="module" src="./src/main.js"></script>
 </html>
 
